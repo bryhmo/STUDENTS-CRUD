@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>show</title>
-</head>
-<body>
-    <h1>welcome the the showcase space</h1>
-</body>
-</html>
+@extends('student.layout')
+@section('content')
+
+
+<div class="card">
+  <div class="card-header"><h2>Students Page</h2></div>
+  <div class="card-body">
+  
+        <div class="card-body">
+        <h5 class="card-title">Name : {{ $students->name }}</h5>
+        <p class="card-text">Address : {{ $students->address }}</p>
+        <p class="card-text">Mobile : {{ $students->mobile }}</p>
+        <p class="card-text">Course : {{ $students->course }}</p>
+        <p class="card-text">Level : {{ $students->level }}</p>
+        <p class="card-text">Age : {{ $students->age }}</p>
+  </div>
+      
+    </hr>
+  
+  </div>
+</div>

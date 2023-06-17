@@ -13,8 +13,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        dd($students);
-        //return view ('student.index');//->with('students', $students);
+        return view ('student.index')->with('students', $students);
         
     }
 
@@ -23,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('students.create');
+        return view('student.create');
     }
 
     /**
@@ -33,7 +32,7 @@ class StudentController extends Controller
     {
         $input = $request->all();
         Student::create($input);
-        return redirect('student');//->with('flash_message', 'Student Addedd!');
+        return redirect('student')->with('flash_message', 'Student Addedd!');
     }
 
     /**
@@ -42,7 +41,7 @@ class StudentController extends Controller
     public function show(string $id)
     {
         $student = Student::find($id);
-        return view('student.show');//->with('students', $student);
+        return view('student.show')->with('students', $student);
     }
 
     /**
@@ -51,7 +50,7 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         $student = Student::find($id);
-        return view('student.edit');//->with('students', $student);
+        return view('student.edit')->with('students', $student);
     }
     
 
@@ -64,7 +63,7 @@ class StudentController extends Controller
         $student = Student::find($id);
         $input = $request->all();
         $student->update($input);
-        return redirect('student');//->with('flash_message', 'student Updated!'); 
+        return redirect('student')->with('flash_message', 'student Updated!'); 
     }
 
     /**
@@ -73,6 +72,6 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         Student::destroy($id);
-        return redirect('student');//->with('flash_message', 'Student deleted!');
+        return redirect('student')->with('flash_message', 'Student deleted!');
     }
 }

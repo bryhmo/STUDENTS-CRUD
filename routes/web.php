@@ -18,8 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('aboutpage','about');
-Route::get('/dashboard',[StudentController::class,'index']);
+// Route::view('aboutpage','about');
+// Route::get('/dashboard',[StudentController::class,'index']);
 Route::get('/indexpage',[StudentController::class,'index']);
 Route::get('/showpage',[StudentController::class,'show']);
 Route::get('/editpage',[StudentController::class,'edit']);
+Route::get('/createpage',[StudentController::class,'create']);
+
+Route::resource("/student", StudentController::class);
